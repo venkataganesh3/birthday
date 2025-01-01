@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            overflow: hidden;
+        }
+        video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        video source{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .head{
+            width:50%;
+            left: 50%;
+            transform: translate(-50%, 10%);
+            position: absolute;
+            top:10px;
+        }
+        .ribbon1{
+            width: 20%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .ribbon2{
+            width: 20%;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .ballons{
+            width:50%;
+            position: absolute;
+            bottom: 0;
+            left: -50px;
+            margin: 0;
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .img{
+            width:50%;
+            max-height: 500px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+        }
+        h2
+        {
+            position: absolute;
+            color:white;
+            width:80%;
+            text-align: center;
+            top:15%;
+            left: 50%;
+            font-size: 1.2rem;
+            transform: translate(-50%,15%);
+        }
+    </style>
+</head>
+<body>
+    
+    <button>Ready To Blast?</button>
+    <div style="display: none;">
+        <video autoplay loop muted >
+            <source src="./bg.mp4" type="video/mp4">
+        </video>
+        <img src="./ribbon-removebg-preview.png" alt="" class="ribbon1">
+    <img src="./ribbon-removebg-preview.png" alt="" class="ribbon2" >
+    <img src="./head-removebg-preview.png" alt="" srcset="" class="head" >
+    <img src="./ballons (2).png" alt="" srcset="" class="ballons" >
+    <img src="./img.jpg" alt="" class="img">
+    <h2>Wish you many more happy return of the day..<b>Telugu Ammai</b></h2>
+    </div>
+    
+    <script>
+        const button = document.querySelector('button');
+        const div = document.querySelector('div');
+        button.addEventListener('click', () => {
+            button.style.display = 'none';
+            div.style.display = 'block';
+        });
+        
+    </script>
+    <script>
+        button.addEventListener('click', () => {
+            button.style.display = 'none';
+            div.style.display = 'block';
+            gsap.from(".ribbon1", { duration: 2, y: -100, opacity: 0 });
+            gsap.from(".ribbon2", { duration: 2, y: -100, opacity: 0 });
+            gsap.from(".head", { duration: 2, scale: 0.5, opacity: 0 });
+            gsap.from(".ballons", { duration: 2, y: 100, opacity: 0 });
+            gsap.from(".img", { duration: 2, x: 100, opacity: 0 });
+            gsap.from("h2", { duration: 2, scale: 0.5, opacity: 0 });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</body>
+
+</html>
